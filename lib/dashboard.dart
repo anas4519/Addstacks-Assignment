@@ -1,3 +1,4 @@
+import 'package:adstacks_assignment/main_content.dart';
 import 'package:adstacks_assignment/sidebar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,10 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: Row(
-        children: [SizedBox(width: screenWidth * 0.2, child: Sidebar())],
+        children: [
+          SizedBox(width: screenWidth * 0.2, child: Sidebar()),
+          Expanded(child: MainContent())
+        ],
       ),
     );
   }

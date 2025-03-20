@@ -15,107 +15,120 @@ class Sidebar extends StatelessWidget {
             minHeight: MediaQuery.of(context).size.height,
           ),
           child: IntrinsicHeight(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/adstacks_logo.png',
-                    height: 100,
-                    width: 100,
-                  ),
-                  Divider(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  ProfileSection(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Divider(),
-                  NavTiles(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  Container(
-                    color: Colors.indigo.shade100,
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(16),
-                    child: Center(
-                      child: const Text(
-                        'WORKSPACES +',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/adstacks_logo.png',
+                        height: 100,
+                        width: 100,
                       ),
-                    ),
-                  ),
-                  ExpansionTile(
-                    title: const Align(
-                      alignment: Alignment.center,
-                      child: Text('Adstacks'),
-                    ),
-                    tilePadding: EdgeInsets.symmetric(horizontal: 16),
-                    children: const [
-                      ListTile(title: Text('Option 1')),
-                      ListTile(title: Text('Option 2')),
+                      Divider(),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      ProfileSection(),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Divider(),
                     ],
                   ),
-                  ExpansionTile(
-                    title: const Align(
-                      alignment: Alignment.center,
-                      child: Text('Finance'),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                NavTiles(),
+                SizedBox(
+                  height: 16,
+                ),
+                Container(
+                  color: Colors.indigo.shade100,
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  child: Center(
+                    child: const Text(
+                      'WORKSPACES +',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
-                    tilePadding: EdgeInsets.symmetric(horizontal: 16),
-                    children: const [
-                      ListTile(title: Text('Overview')),
-                      ListTile(title: Text('Reports')),
-                    ],
                   ),
-                  SizedBox(
-                    height: 64,
+                ),
+                ExpansionTile(
+                  title: const Align(
+                    alignment: Alignment.center,
+                    child: Text('Adstacks'),
                   ),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(children: [
+                  tilePadding: EdgeInsets.symmetric(horizontal: 16),
+                  children: const [
+                    ListTile(title: Text('Option 1')),
+                    ListTile(title: Text('Option 2')),
+                  ],
+                ),
+                ExpansionTile(
+                  title: const Align(
+                    alignment: Alignment.center,
+                    child: Text('Finance'),
+                  ),
+                  tilePadding: EdgeInsets.symmetric(horizontal: 16),
+                  children: const [
+                    ListTile(title: Text('Overview')),
+                    ListTile(title: Text('Reports')),
+                  ],
+                ),
+                SizedBox(
+                  height: 128,
+                ),
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: Row(children: [
                           SizedBox(
                             width: 48,
                           ),
                           Icon(
                             Icons.settings,
-                            size: 18,
+                            size: 22,
                           ),
                           SizedBox(
                             width: 16,
                           ),
-                          Text('Setting', style: TextStyle(fontSize: 18))
+                          Text('Setting', style: TextStyle(fontSize: 22))
                         ]),
-                        SizedBox(
-                          height: 16,
-                        ),
-                        Row(children: [
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Row(children: [
                           SizedBox(
                             width: 48,
                           ),
                           Icon(
                             Icons.logout_rounded,
-                            size: 18,
+                            size: 22,
                           ),
                           SizedBox(
                             width: 16,
                           ),
                           Text(
                             'Logout',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: 22),
                           )
                         ]),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
